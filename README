@@ -1,0 +1,58 @@
+name:    sbitget  --  extract bitmap-data from a TrueType font
+version: 0.1
+date:    Mon Jan 30 2002
+author:  Itou Hiroki <itouhiroki@lycos.jp>
+
+Description
+        This tool extract bitmap data from a TrueType font file
+        to BDF-format text files.  
+
+        TrueType files that embedded bitmap data are limited.
+        The author found 'Lucida Console' (lucon.ttf) in
+        Windows98 is the one.
+
+        TrueTypeCollection (TTC) files are not supported,  but
+        you can divide one TTC file into some TTF files with
+        ftp://ftp.microsoft.com/developr/drg/truetype/ttsdk.zip
+
+        
+Usage
+        $ sbitget truetypefontfile
+
+
+Files
+        sbitget.c    -  source code for Unix & Windows
+                          Compiled and tested this in 
+                          RedHatLinux7.2 (gcc2.96) and
+                          Windows95 (mingw, gcc2.95.3-5).
+        sbitget.exe  -  Windows executable file
+        README
+        README-ja    -  document
+
+
+How to compile and install
+        $ gcc -O2 sbitget.c -o sbitget
+        $ su
+        # cp sbitget /usr/local/bin
+
+
+Caution 
+        Output BDF-format files are NOT a real BDF file.
+        Character-code information and glyph's encoding numbers
+        are missing in these files.
+        ( 'glyphID:xxxx' means index numbers in the TrueType font.
+           In TrueType fonts,  'cmap' table combines TrueType's
+           index numbers with glyph's encoding numbers.
+           This software don't read 'cmap' table.)
+        
+        If you want to use these files,  please add info to these
+        files by your own (with Perl script,  for example).
+
+
+License
+        This tool is a freeware.
+        See the source code for details.
+
+
+--
+Itou Hiroki

@@ -1,0 +1,50 @@
+name:    sbitget  --  extract bitmap-data from a TrueType font
+version: 0.1
+date:    Mon Jan 30 2002
+author:  Itou Hiroki <itouhiroki@lycos.jp>
+
+説明
+        このツールは、TrueTypeフォントにビットマップデータが含まれて
+        いる場合、それを抜き出して、BDF形式のファイルに 出力します。
+
+        ビットマップデータが含まれている TrueTypeファイルは限られて
+        います。TTCファイルはサポートしていませんが、
+        ftp://ftp.microsoft.com/developr/drg/truetype/ttsdk.zip
+        に含まれる BREAKTTC.EXE によって、TTCファイルを複数のTTF
+        ファイルにすれば、このソフトを適用することができます。
+        
+
+使用法
+        $ sbitget ファイル名
+
+
+ファイル
+        sbitget.c    -  ソースコード
+                          RedHatLinux7.2 (gcc2.96) と Windows95
+                          (mingw, gcc2.95.3-5) でテストしてあります。
+        sbitget.exe  -  Windowsの実行ファイル
+        README
+        README-ja  -    ドキュメント
+
+
+注意
+        このソフトによって出力される BDF形式のファイルを、実際に
+        BDFフォントファイルとして使用することはできません。
+        文字コード指定と、各グリフのエンコーディング番号が無いためです。
+
+        ('glyphID:xxxx' というのは、TrueTypeフォント内部の番号です。
+         TrueTypeフォントにおいては、'cmap'テーブルによって、
+         この番号と、文字コード番号とを結び付けます。
+         このソフトは、その'cmap'テーブルの情報を読みこんでいません。)
+
+        もしこの BDF形式のファイルを実際に使用しようとするなら、
+        Perlスクリプトなどによって、自分で番号を付けてください。
+
+
+ライセンス
+        このソフトはフリーウェアです。
+        ソースコードに詳細があります。
+
+
+--
+Itou Hiroki
