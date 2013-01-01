@@ -1,7 +1,7 @@
 name:    sbitget  --  extract bitmap-data from a TrueType font
 version: 0.1
 date:    Mon Jan 30 2002
-author:  Itou Hiroki <itouhiroki@lycos.jp>
+author:  Itou Hiroki
 
 説明
         このツールは、TrueTypeフォントにビットマップデータが含まれて
@@ -12,6 +12,12 @@ author:  Itou Hiroki <itouhiroki@lycos.jp>
         ftp://ftp.microsoft.com/developr/drg/truetype/ttsdk.zip
         に含まれる BREAKTTC.EXE によって、TTCファイルを複数のTTF
         ファイルにすれば、このソフトを適用することができます。
+
+        読みかたは エスビット・ゲット。sbitというのは TrueType用語で、
+        埋め込みビットマップのことです。scaler bitmap の略だそうです。
+
+        http://hp.vector.co.jp/authors/VA013241/font/sbitget.html
+        にも説明があります。
         
 
 使用法
